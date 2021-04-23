@@ -49,16 +49,13 @@ def start_handler_02(m):
     if m.text == '1958':
             wrong(m)
             keyboard.row('Продолжить')
-            #keyboard.row('пункт 1.1.1', 'пункт 1.1.2', 'пункт 1.1.3')
     elif m.text == '1955':
             correct(m)
             keyboard.row('Продолжить')
             rightAnsw+=1
-            #keyboard.row('пункт 1.2.1', 'пункт 1.2.2', 'пункт 1.2.3')
     elif m.text == '1963':
             wrong(m)
             keyboard.row('Продолжить')
-        #keyboard.row('пункт 1.3.1', 'пункт 1.3.2', 'пункт 1.3.3')
     send = bot.send_message(m.from_user.id, 'Продолжаем!', reply_markup = keyboard)
     bot.register_next_step_handler(send, start_handler_03)
 
@@ -78,16 +75,13 @@ def start_handler_04(m):
     if m.text == 'Деннис Ритчи':
             wrong(m)
             keyboard.row('Продолжить')
-            #keyboard.row('пункт 1.1.1', 'пункт 1.1.2', 'пункт 1.1.3')
     elif m.text == 'Гвидо ван Россум':
             correct(m)
             keyboard.row('Продолжить')
             rightAnsw+=1
-            #keyboard.row('пункт 1.2.1', 'пункт 1.2.2', 'пункт 1.2.3')
     elif m.text == 'Роб Пайк':
             wrong(m)
             keyboard.row('Продолжить')
-        #keyboard.row('пункт 1.3.1', 'пункт 1.3.2', 'пункт 1.3.3')
     send = bot.send_message(m.from_user.id, 'Продолжаем!', reply_markup = keyboard)
     bot.register_next_step_handler(send, start_handler_05)
 
@@ -106,16 +100,13 @@ def start_handler_06(m):
     if m.text == '8':
             wrong(m)
             keyboard.row('Продолжить')
-            #keyboard.row('пункт 1.1.1', 'пункт 1.1.2', 'пункт 1.1.3')
     elif m.text == '16':
             correct(m)
             keyboard.row('Продолжить')
             rightAnsw+=1
-            #keyboard.row('пункт 1.2.1', 'пункт 1.2.2', 'пункт 1.2.3')
     elif m.text == '10':
             wrong(m)
             keyboard.row('Продолжить')
-        #keyboard.row('пункт 1.3.1', 'пункт 1.3.2', 'пункт 1.3.3')
     send = bot.send_message(m.from_user.id, 'Продолжаем!', reply_markup = keyboard)
     bot.register_next_step_handler(send, start_handler_07)
 
@@ -134,16 +125,13 @@ def start_handler_08(m):
     if m.text == '8':
             wrong(m)
             keyboard.row('Продолжить')
-            #keyboard.row('пункт 1.1.1', 'пункт 1.1.2', 'пункт 1.1.3')
     elif m.text == '0.125':
             correct(m)
             keyboard.row('Продолжить')
             rightAnsw+=1
-            #keyboard.row('пункт 1.2.1', 'пункт 1.2.2', 'пункт 1.2.3')
     elif m.text == '64':
             wrong(m)
             keyboard.row('Продолжить')
-        #keyboard.row('пункт 1.3.1', 'пункт 1.3.2', 'пункт 1.3.3')
     send = bot.send_message(m.from_user.id, 'Продолжаем!', reply_markup = keyboard)
     bot.register_next_step_handler(send, start_handler_09)
 
@@ -167,5 +155,5 @@ def start_handler_10(m):
             keyboard.row('Закончить квиз.')
             rightAnsw+=1
     bot.send_message(m.from_user.id, f'Спасибо за участие в квизе! Ваш результат {rightAnsw} правильных ответов из 5.', reply_markup = keyboard)
-    keyboard.row('/start')
+    rightAnsw = 0
 bot.polling()
